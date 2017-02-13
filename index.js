@@ -2,4 +2,6 @@
 
 const welcome = require('./lib/howdy.js');
 
-welcome.greeting('Dana');
+if (process.argv.length > 2) welcome.greeting('Dana');
+
+console.log(process.argv[2]);
