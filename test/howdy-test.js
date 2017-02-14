@@ -12,6 +12,13 @@ describe('Howdy Module', function() {
       assert.ok(printout === `hello ${process.argv[2]}`, 'incorrect result');
     });
   });
+  describe('#greeting', function() {
+    it('Should result in error from missing input', function() {
+      assert.throws(function() {
+        howdy.greeting();
+      }, 'Error not thrown for empty input');
+    });
+  });
   describe('#multipleGreetings', function() {
     it(`should return all names entered in command line`, function() {
       let printout = howdy.multipleGreetings(process.argv);
